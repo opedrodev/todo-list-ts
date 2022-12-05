@@ -1,0 +1,9 @@
+.tasklist {
+  width: min(100%, 120rem);
+  margin-inline: auto;
+  padding: 6.4rem 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
