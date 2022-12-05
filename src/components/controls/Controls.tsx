@@ -23,24 +23,32 @@ const Controls = () => {
 
   return (
     <div className={ styles.controls }>
-      <h1>TODO</h1>
+      <h1 className={ styles.logo }>TODO</h1>
 
       <input
         type='text'
         value={ task }
         onChange={ (e) => onTypeTask(e) }
         placeholder='Add your task here'
+        className={ styles.input }
       />
 
       <button
         type='button'
         title='Add Task'
         onClick={ onAddTask }
+        className={ styles.button }
       >
         <IoAdd />
       </button>
 
-      <button type='button' title='Completed Tasks'><IoList /></button>
+      <button
+        type='button'
+        title='Completed Tasks'
+        className={ styles.button }
+      >
+        <IoList />
+      </button>
     </div>
   );
 };

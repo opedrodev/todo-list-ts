@@ -1,0 +1,5 @@
+@mixin md-bp {
+  @media (max-width: 650px) {
+    @content;
+  }
+}
