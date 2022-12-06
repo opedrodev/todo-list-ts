@@ -1,13 +1,17 @@
 import React from 'react';
-import Controls from './components/controls/Controls';
-import TaskList from './components/tasks/TaskList';
+import { Routes, Route } from 'react-router-dom';
 import styles from './styles/App.module.scss';
+import TodoList from './pages/TodoList';
+import Archived from './pages/Archived';
 
 const App = () => {
   return (
     <div className={ styles.app }>
-      <Controls />
-      <TaskList />
+      <Routes>
+        <Route path='/' element={ <TodoList /> } />
+        <Route path='/archived' element={ <Archived /> } />
+        <Route path='*' element={ <TodoList /> } />
+      </Routes>
     </div>
   );
 };

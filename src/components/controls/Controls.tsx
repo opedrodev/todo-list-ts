@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { IoAdd, IoList } from 'react-icons/io5';
+import { IoAdd, IoArchiveOutline } from 'react-icons/io5';
 
 import styles from './styles/Controls.module.scss';
 import { addTask } from '../../app/reducers/tasks';
@@ -8,6 +9,7 @@ import { addTask } from '../../app/reducers/tasks';
 const Controls = () => {
   const [task, setTask] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onTypeTask = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { target: { value } } = event;
@@ -44,10 +46,11 @@ const Controls = () => {
 
       <button
         type='button'
-        title='Completed Tasks'
+        title='Archived Tasks'
         className={ styles.button }
+        onClick={ () => navigate('/archived') }
       >
-        <IoList />
+        <IoArchiveOutline />
       </button>
     </div>
   );

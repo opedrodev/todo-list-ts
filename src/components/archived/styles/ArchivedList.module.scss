@@ -1,0 +1,52 @@
+@use '../../../styles/utils/colors.scss' as *;
+@use '../../../styles/utils/mixins.scss' as *;
+
+.archivedlist {
+  width: min(100%, 120rem);
+  margin-inline: auto;
+
+  & > .navigation {
+    background-color: darken($black, 4%);
+    padding: 1.6rem;
+    border-radius: .8rem;
+    margin-bottom: 6.4rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    & > .link {
+      @include button;
+    }
+
+    & > .title {
+      text-align: center;
+    }
+  }
+
+  & > .tasks {
+    display: grid;
+    gap: 1.6rem;
+    margin-bottom: 6.4rem;
+
+    & > .task {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+  
+      background-color: darken($black, 4%);
+      border-radius: .8rem;
+      padding: .8rem;
+      padding-left: 1.6rem;
+  
+      & > .task {
+        word-break: break-all;
+      }
+
+      & > .delete {
+        @include button;
+        background-color: darken($black, 4%);
+      }
+    }
+  }
+}

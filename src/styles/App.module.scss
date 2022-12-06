@@ -21,4 +21,19 @@ body {
   width: 100vw;
   background-color: $black;
   padding: 1.6rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+
+    &-track {
+      background: $black;
+    }
+
+    &-thumb {
+      background: darken($black, 8%);
+      border-radius: 0.8rem;
+    }
+  }
 }
